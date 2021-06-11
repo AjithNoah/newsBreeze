@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        >
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/imgArrowUp"
+            android:rotation="180"
+            android:src="@drawable/ic_baseline_arrow_drop_down_24"
+            >
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textVote"
+            android:gravity="center"
+            android:layout_alignEnd="@+id/imgArrowUp"
+            android:layout_alignStart="@+id/imgArrowUp"
+            android:textColor="@android:color/black"
+            android:layout_below="@+id/imgArrowUp"
+            android:textSize="22sp"
+            >
+
+        </TextView>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/imgArrowDown"
+            android:layout_below="@+id/textVote"
+            android:src="@drawable/ic_baseline_arrow_drop_down_24"
+            >
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/textVotes"
+            android:layout_alignEnd="@+id/imgArrowUp"
+            android:layout_alignStart="@+id/imgArrowUp"
+            android:textColor="@android:color/black"
+            android:layout_below="@+id/imgArrowDown"
+            android:text="Votes"
+            >
+
+        </TextView>
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:id="@+id/imgBanner"
+            android:layout_alignTop="@+id/imgArrowUp"
+            android:layout_alignBottom="@+id/textVotes"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_toEndOf="@+id/imgArrowUp"
+            >
+
+        </ImageView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/imgBanner"
+            android:id="@+id/llDetail"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:id="@+id/textName"
+                android:textColor="@android:color/black"
+                >
+
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:id="@+id/textGenre"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:ellipsize="end"
+                >
+
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:textColor="@android:color/black"
+                android:id="@+id/textDirector"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:ellipsize="end"
+                >
+
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:textColor="@android:color/black"
+                android:id="@+id/texStarring"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:ellipsize="end"
+                >
+
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:textColor="@android:color/black"
+                android:id="@+id/textRuntime"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:ellipsize="end"
+                >
+
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:id="@+id/textViews"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:ellipsize="end"
+                >
+
+            </TextView>
+
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnLogin"
+            android:text="Watch Trailer"
+            android:textAllCaps="false"
+            android:layout_below="@+id/llDetail"
+            android:visibility="visible"
+            android:layout_marginTop="@dimen/_13sdp"
+            app:cornerRadius="@dimen/_5sdp"
+            >
+
+        </com.google.android.material.button.MaterialButton>
+
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
