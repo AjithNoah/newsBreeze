@@ -70,6 +70,7 @@ class NewsDetailActivity : AppCompatActivity() {
         getNewsFromLocal(newsId)
     }
 
+    // getting local saved news
     private fun getNewsFromLocal(newsId: Int) {
         newsViewModel.getNewsById(newsId).observe(this, Observer {
             it?.let {
@@ -83,12 +84,12 @@ class NewsDetailActivity : AppCompatActivity() {
                             binding.textContent.text = it.data.Content
                             binding.textAuthor.text = it.data.Author
                             if (it.data.Saved == 0){
-                                binding.btnSaved.text = "Save"
+                                binding.btnSaved.text = getString(R.string.save)
                                 binding.imgBookMark.setImageResource(R.drawable.ic_save_outline)
 
 
                             }else {
-                                binding.btnSaved.text = "Saved"
+                                binding.btnSaved.text = getString(R.string.saved)
                                 binding.imgBookMark.setImageResource(R.drawable.ic_save)
                             }
                             Glide.with(this).load(it.data.Image).into(binding.imgBanner)

@@ -6,10 +6,8 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
-import android.util.Log
 import android.view.View
 import android.view.ViewGroup
-import android.view.WindowManager
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
@@ -24,8 +22,6 @@ import com.app.newsbreeze.util.viewBinding
 import com.app.newsbreeze.viewmodel.NewsViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import dagger.hilt.android.AndroidEntryPoint
-import java.util.*
-import kotlin.Comparator
 import kotlin.collections.ArrayList
 
 @AndroidEntryPoint
@@ -48,6 +44,7 @@ class NewsActivity : AppCompatActivity() {
 
     }
 
+    // fetching news from api
     private fun getNews() {
         newsViewModel.getNews().observe(this, Observer {
             it?.let {
@@ -59,15 +56,12 @@ class NewsActivity : AppCompatActivity() {
                         dismissProgress()
                         if (it.data!!.isNotEmpty()){
                             binding.textNodata.visibility = View.GONE
-
                             newsList.clear()
                             newsList.addAll(it.data)
-                            sortList(sort)
-                            //newsAdapter!!.setNews(newsList)
+                            sortList(sort) // sort data based on filter applied
                         }
                         else {
                             binding.textNodata.visibility = View.VISIBLE
-                            //Toast.makeText(this, it.message, Toast.LENGTH_SHORT).show()
                         }
                     }
                     Status.ERROR -> {
@@ -82,6 +76,8 @@ class NewsActivity : AppCompatActivity() {
 
     private fun setOnClickListener() {
         newsAdapter!!.onItemClick = {isFrom,model ->
+
+             // checking save status
             if (isFrom == "Save"){
                 val status = if(model.Saved == 0){
                     1
@@ -89,9 +85,8 @@ class NewsActivity : AppCompatActivity() {
                     0
                 }
 
-                val news = model
-                news.Saved = status
-                newsViewModel.update(news)
+                model.Saved = status
+                newsViewModel.update(model)
             }
             else {
                 val intent = Intent(this,NewsDetailActivity::class.java)
@@ -153,8 +148,13 @@ class NewsActivity : AppCompatActivity() {
         fromSheetDialog.show()
 
     }
-
+    //data sorting
     private fun sortList(input: Int) {
+
+        //0 - date ascending order
+        //1 - date descending order
+        //2 - popularity order
+
         if (tempList.size > 0){
             newsAdapter!!.setNews(tempList)
         }
@@ -177,7 +177,7 @@ class NewsActivity : AppCompatActivity() {
         }
 
     }
-
+    // search filters
     private fun filterList(txt: String) {
         tempList.clear()
         if (!TextUtils.isEmpty(txt)) {

@@ -44,6 +44,7 @@ class SaveNewsActivity : AppCompatActivity() {
         setOnClickListener()
     }
 
+    //getting local saved news
     private fun getSavedNews() {
         newsViewModel.getSavedNews().observe(this, Observer {
             it?.let {

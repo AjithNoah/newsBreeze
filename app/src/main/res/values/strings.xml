@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">NewsBreeze</string>
+    <string name="save">Save</string>
+    <string name="saved">Saved</string>
 </resources>
