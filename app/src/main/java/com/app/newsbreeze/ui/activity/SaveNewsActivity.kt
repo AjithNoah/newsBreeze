@@ -53,6 +53,8 @@ class SaveNewsActivity : AppCompatActivity() {
                     }
                     Status.SUCCESS -> {
                         if (it.data!!.isNotEmpty()){
+                            binding.recycleSaved.visibility = View.VISIBLE
+                            binding.textNodata.visibility = View.GONE
                             newsList.clear()
                             newsList.addAll(it.data)
                             saveNewsAdapter!!.setNews(newsList)
@@ -60,6 +62,7 @@ class SaveNewsActivity : AppCompatActivity() {
 
                         }
                         else {
+                            binding.recycleSaved.visibility = View.GONE
                             binding.textNodata.visibility = View.VISIBLE
                         }
                     }
