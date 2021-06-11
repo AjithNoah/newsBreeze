@@ -16,13 +16,6 @@
         <activity android:name=".ui.activity.SaveNewsActivity"/>
         <activity android:name=".ui.activity.NewsDetailActivity" />
         <activity android:name=".ui.activity.NewsActivity" />
-        <activity android:name=".ui.activity.CompanyInfoActivity" />
-        <activity
-            android:name=".ui.activity.MainActivity"
-            android:configChanges="keyboardHidden"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.RegisterActivity" />
-        <activity android:name=".ui.activity.LoginActivity" />
         <activity android:name=".ui.activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
