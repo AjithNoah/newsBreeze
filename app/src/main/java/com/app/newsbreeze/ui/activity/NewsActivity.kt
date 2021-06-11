@@ -36,6 +36,7 @@ class NewsActivity : AppCompatActivity() {
     var newsList:ArrayList<News> = ArrayList()
     var tempList:ArrayList<News> = ArrayList()
     private val newsViewModel: NewsViewModel by viewModels()
+    var sort = 1
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -61,7 +62,8 @@ class NewsActivity : AppCompatActivity() {
 
                             newsList.clear()
                             newsList.addAll(it.data)
-                            newsAdapter!!.setNews(newsList)
+                            sortList(sort)
+                            //newsAdapter!!.setNews(newsList)
                         }
                         else {
                             binding.textNodata.visibility = View.VISIBLE
@@ -132,15 +134,18 @@ class NewsActivity : AppCompatActivity() {
         val bind = LayoutFilterBinding.bind(view)
         bind.rlAsc.setOnClickListener {
             sortList(0)
+            sort = 0
             fromSheetDialog.dismiss()
         }
         bind.rlDesc.setOnClickListener {
             sortList(1)
+            sort = 1
             fromSheetDialog.dismiss()
 
         }
         bind.textPopularity.setOnClickListener {
             sortList(2)
+            sort = 2
             fromSheetDialog.dismiss()
 
         }
@@ -150,21 +155,27 @@ class NewsActivity : AppCompatActivity() {
     }
 
     private fun sortList(input: Int) {
-        val sortList:ArrayList<News> = ArrayList()
-        sortList.addAll(newsList)
-        when(input){
-            0 -> {
-                sortList.sortWith { p0, p1 -> p0!!.Date.compareTo(p1!!.Date)}
-                newsAdapter!!.setNews(sortList)
-            }
-            1-> {
-                sortList.sortWith { p0, p1 -> p1!!.Date.compareTo(p0!!.Date) }
-                newsAdapter!!.setNews(sortList)
-            }
-            2-> {
-                newsAdapter!!.setNews(newsList)
+        if (tempList.size > 0){
+            newsAdapter!!.setNews(tempList)
+        }
+        else {
+            val sortList:ArrayList<News> = ArrayList()
+            sortList.addAll(newsList)
+            when(input){
+                0 -> {
+                    sortList.sortWith { p0, p1 -> p0!!.Date.compareTo(p1!!.Date)}
+                    newsAdapter!!.setNews(sortList)
+                }
+                1-> {
+                    sortList.sortWith { p0, p1 -> p1!!.Date.compareTo(p0!!.Date) }
+                    newsAdapter!!.setNews(sortList)
+                }
+                2-> {
+                    newsAdapter!!.setNews(newsList)
+                }
             }
         }
+
     }
 
     private fun filterList(txt: String) {

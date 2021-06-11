@@ -194,6 +194,19 @@ object Utils {
         return ""
     }
 
+    fun currentDate() :String{
+        val current = Calendar.getInstance()
+        try {
+            val outputFormat = SimpleDateFormat("yyyy-MM-dd")
+            val formattedDate: String = outputFormat.format(current.time)
+            return formattedDate
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+        return ""
+
+    }
+
     fun convertDate(dateInMilliseconds: Long): String? {
         val date = Date(dateInMilliseconds * 1000L)
         val format: DateFormat = SimpleDateFormat("dd MMM")

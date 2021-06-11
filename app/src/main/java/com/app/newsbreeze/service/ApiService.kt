@@ -9,7 +9,7 @@ interface ApiService {
     @GET("v2/everything?q=apple")
     suspend fun newsData(
         @Query("from") from :String = "2021-06-05",
-        @Query("to") to :String = "2021-06-10",
+        @Query("to") to :String = Utils.currentDate(),
         @Query("sortBy") sort :String = "popularity",
         @Query("apiKey") key :String = Utils.APIKEY
     ):NewsResponse
