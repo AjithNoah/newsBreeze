@@ -2,4 +2,15 @@
     <string name="app_name">NewsBreeze</string>
     <string name="save">Save</string>
     <string name="saved">Saved</string>
+    <string name="search">Search</string>
+    <string name="no_data_available_at_the_moment">No data available at the moment</string>
+    <string name="lorem_correspondent">Lorem correspondent</string>
+    <string name="saved">Saved</string>
+    <string name="today">Today</string>
+    <string name="no_saved_news">No saved news</string>
+    <string name="read">Read</string>
+    <string name="sort_by">Sort By</string>
+    <string name="date_ascending">Date (Ascending)</string>
+    <string name="date_descending">Date (Descending)</string>
+    <string name="popularity">Popularity</string>
 </resources>

@@ -107,7 +107,7 @@
             android:id="@+id/btnRead"
             android:textAllCaps="false"
             android:layout_marginEnd="@dimen/_10sdp"
-            android:text="Read"
+            android:text="@string/read"
             >
 
         </com.google.android.material.button.MaterialButton>
@@ -118,7 +118,7 @@
             android:textAllCaps="false"
             android:id="@+id/btnSave"
             android:layout_marginStart="@dimen/_10sdp"
-            android:text="Save"
+            android:text="@string/save"
             >
 
         </com.google.android.material.button.MaterialButton>

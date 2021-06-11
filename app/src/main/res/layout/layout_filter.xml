@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sort By"
+        android:text="@string/sort_by"
         android:textColor="@color/black"
         android:textStyle="bold"
         android:textSize="15sp"
@@ -32,7 +32,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Date (Ascending)"
+            android:text="@string/date_ascending"
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/_5sdp"
             >
@@ -59,7 +59,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Date (Descending)"
+            android:text="@string/date_descending"
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/_5sdp"
             >
@@ -78,7 +78,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Popularity"
+        android:text="@string/popularity"
         android:id="@+id/textPopularity"
         android:gravity="center"
         android:layout_gravity="center"

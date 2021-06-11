@@ -127,7 +127,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="12sp"
                         android:layout_marginStart="@dimen/_10sdp"
-                        android:text="Lorem correspondent"
+                        android:text="@string/lorem_correspondent"
                         >
 
                     </TextView>
@@ -142,7 +142,7 @@
                     android:layout_alignParentEnd="true"
                     android:textAllCaps="false"
                     android:layout_marginStart="@dimen/_10sdp"
-                    android:text="Save"
+                    android:text="@string/save"
                     >
 
                 </com.google.android.material.button.MaterialButton>
