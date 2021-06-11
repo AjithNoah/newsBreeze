@@ -13,7 +13,7 @@ NewsBreeze is an unofficial newsApi client that gets the latest breaking news to
 - News sorting available
  
 ## Technical Specs
-- MVVM - Followed this architechture
+- MVVM - For neat and clean architecture
 - Fetch news from this API: https://newsapi.org/
 - Retrofit - Library used for api calling.
 - Room - Library used for local storage
